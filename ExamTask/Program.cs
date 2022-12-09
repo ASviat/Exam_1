@@ -4,22 +4,35 @@
 
 
 
-string[] hell = new string[4] { "hello ", "2 ", "world ", ":-)" };
-// for (int i = 0; i < 4; i++)
-// {
-//     Console.Write(hell[i]);
-// }
 
 
-HowMuchSimbols(hell);
-
-void HowMuchSimbols(string[] array)
+string[] EnterWordsToArray()
 {
-    for (int i=0; i < array.Length; i++)
+    Console.WriteLine("Введите количество вводимых слов: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    string[] array = new string[number];
+    for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3) 
+        Console.WriteLine($"Введите {i + 1} слово: ");
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
+string[] words = EnterWordsToArray();
+
+
+
+
+PrintWordsFromArray(words);
+
+void PrintWordsFromArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
         {
             Console.WriteLine(array[i]);
-        } 
+        }
     }
 }
