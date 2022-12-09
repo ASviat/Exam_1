@@ -4,7 +4,9 @@
 
 string[] words = EnterWordsToArray();
 Console.WriteLine();
-PrintWordsFromArray(words);
+string[] sortedArray = CreateSortedArray(words);
+PrintArray(sortedArray);
+
 
 string[] EnterWordsToArray()
 {
@@ -20,16 +22,25 @@ string[] EnterWordsToArray()
     return array;
 }
 
-void PrintWordsFromArray(string[] array)
+string[] CreateSortedArray(string[] array)
 {
-    Console.Write("[ ");
+    string[] sorted = new string[array.Length];
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            Console.Write(array[i]);
-            Console.Write(" ");
+            sorted[i] = array[i];
         }
     }
-    Console.WriteLine("]");
+    return sorted;
+}
+
+void PrintArray(string[] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] != null) Console.Write($"{array[i]} ");
+    }
+    Console.Write("]");
 }
