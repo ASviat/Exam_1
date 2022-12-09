@@ -6,9 +6,9 @@ string[] words = EnterWordsToArray();
 Console.WriteLine();
 PrintWordsFromArray(words);
 
-
 string[] EnterWordsToArray()
 {
+
     Console.WriteLine("Введите количество вводимых слов: ");
     int number = Convert.ToInt32(Console.ReadLine());
     string[] array = new string[number];
